@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">MyPortfolio<span>.</span></h2>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Java Code</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="welcome">WELCOME TO MY PERSONAL PORTFOLIO</p>
+
+            <h1>Hello, I'm <span>Jean Margarette M. Valeroso</span></h1>
+
+            <h2>Aspiring Web Developer</h2>
+
+            <p>
+                I am a student who is passionate about technology,
+                programming, and learning new skills.
+                Welcome to my personal portfolio website!
+            </p>
+
+            <a href="#about" class="btn">Explore My Portfolio</a>
+        </div>
+
+        <div class="profile">
+            <div class="profile-circle">YOUR PHOTO</div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="about-card">
+            <h3>Personal Information</h3>
+
+            <p><strong>Full Name:</strong> Jean Margarette M. Valeroso</p>
+            <p><strong>Age:</strong> 18</p>
+            <p><strong>Address:</strong> Brgy. Bacayao, Guimba, N.E</p>
+            <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+            <p><strong>Email:</strong> jeanvaleroso183@gmail.com</p>
+
+            <h3>Introduction</h3>
+            <p>
+                Hello! My name is Jean Margarette. I am a student
+                who enjoys learning about computers, technology,
+                and programming. I am continuously improving
+                my skills and knowledge to become a successful
+                professional in the future.
+            </p>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+        <h2 class="section-title">Educational <span>Background</span></h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+                <h3>College</h3>
+                <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+                <p>Course: BSIT</p>
+                <p>Year: 2026 - 2027</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Senior High School</h3>
+                <p>Bonifacio Luz Natividad Educational Foundation, Inc.</p>
+                <p>Strand: ABM</p>
+                <p>Year: 2025 - 2026</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Junior High School</h3>
+                <p>Bartolome Sangalang National High School</p>
+                <p>Year: 2023 - 2024</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Creating and structuring web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Designing and styling websites.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Writing basic Java programs.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>Analyzing problems and finding solutions.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Communication</h3>
+                <p>Sharing ideas and working with others.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Teamwork</h3>
+                <p>Collaborating and completing tasks as a team.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JAVA PROJECT -->
+    <section id="projects" class="section">
+        <h2 class="section-title">My Java <span>Project</span></h2>
+
+        <div class="project-card">
+            <h3>CC102 - Daily Sales Analyzer</h3>
+
+            <p>
+                This section contains my Java console-based game
+                developed as part of my CC102 Final Performance Task.
+            </p>
+
+           <div class="code-box">
+           <pre><code>
+public class DailySalesAnalyzer {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double[] sales = new double[7];
+        double total = 0;
+        double average;
+        int count = 0;
+
+        for (int i = 0; i &lt; 7; i++) {
+            while (true) {
+                System.out.print("Enter sales for Day " + (i + 1) + ": ");
+
+                if (input.hasNextDouble()) {
+                    sales[i] = input.nextDouble();
+
+                    if (sales[i] &gt;= 0) {
+                        break;
+                    } else {
+                        System.out.println("Invalid amount!");
+                    }
+                } else {
+                    System.out.println("Invalid input!");
+                    input.next();
+                }
+            }
+
+            total += sales[i];
+
+            if (sales[i] &gt;= 5000) {
+                count++;
+            }
+        }
+
+        average = total / 7;
+
+        double highest = sales[0];
+        double lowest = sales[0];
+
+        for (int i = 1; i &lt; 7; i++) {
+            if (sales[i] &gt; highest) {
+                highest = sales[i];
+            }
+
+            if (sales[i] &lt; lowest) {
+                lowest = sales[i];
+            }
+        }
+
+        for (int i = 0; i &lt; 6; i++) {
+            for (int j = 0; j &lt; 6 - i; j++) {
+                if (sales[j] &lt; sales[j + 1]) {
+                    double temp = sales[j];
+                    sales[j] = sales[j + 1];
+                    sales[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("DAILY SALES REPORT");
+        System.out.println("Total Sales: PHP " + total);
+        System.out.println("Average Sales: PHP " + average);
+        System.out.println("Highest Sales: PHP " + highest);
+        System.out.println("Lowest Sales: PHP " + lowest);
+        System.out.println("Days with at least PHP 5,000: " + count);
+
+        System.out.println("Sales in Descending Order:");
+
+        for (int i = 0; i &lt; 7; i++) {
+            System.out.println(sales[i]);
+        }
+
+        input.close();
+    }
+}
+</code></pre>
+</div>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <div class="contact-card">
+            <p><strong>Email:</strong> jeanvaleroso183@gmail.com</p>
+            <p><strong>Facebook:</strong> Jean Valeroso</p>
+            <p><strong>Phone:</strong> 09274333019</p>
+            <p><strong>Location:</strong> Brgy. Bacayao, Guimba, N.E</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Jean Margarette M. Valeroso | Personal Portfolio</p>
+        <p>Designed with HTML and CSS</p>
+    </footer>
+
+</body>
+</html>
